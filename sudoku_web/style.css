@@ -1,0 +1,66 @@
+:root {
+    --black: #000;
+    --white: #fff;
+    --color-main: #0C7489;
+    --color-main-light: #119DA4;
+    --color-main-dark: #13505B;
+    --color-field: #D7D9CE;
+    --color-field-dark: #040404;
+  }
+
+body {
+    margin: auto;
+    background-color: var(--color-main-dark);
+}
+
+section {
+    float: left;
+}
+
+.header {
+    width: 100%;
+    background-color: var(--color-main);
+}
+
+.panelL {
+    width: 20%;
+    background-color: var(--color-main-dark);
+}
+
+.panelR {
+    width: 80%;
+    height: 1000px;
+    background-color: var(--color-main-light);
+}
+
+.footer {
+    width: 100%;
+    background-color: var(--color-main);
+}
+
+.board {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    height: 900px;
+    width: 900px;
+    border: 1px solid var(--black);
+}
+
+.bigField {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    border: 1px solid var(--black);
+}
+
+.field {
+    background-color: var(--color-field);
+    color: var(--color-field-dark);
+    border: 1px solid var(--black);
+    text-align: center;
+}
+
+.field:hover {
+    transition-duration: 0.5s;
+    background-color: var(--color-field-dark);
+    color: var(--color-field);
+}
