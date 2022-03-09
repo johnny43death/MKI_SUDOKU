@@ -51,31 +51,6 @@ section {
     background-color: var(--color-main);
 }
 
-/*
-.board {
-    display: inline-grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    height: 900px;
-    width: 900px;
-    border: 1px solid var(--black);
-}
-
-.bigField {
-    display: inline-grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    border: 1px solid var(--black);
-}
-
-.field {
-    display: flex;
-    background-color: var(--color-field);
-    color: var(--color-field-dark);
-    border: 1px solid var(--black);
-    align-items: center;
-    justify-content: center;
-}
-*/
-
 table.board {
     height: 900px;
     width: 900px;
