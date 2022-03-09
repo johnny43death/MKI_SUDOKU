@@ -11,6 +11,16 @@
 body {
     margin: auto;
     background-color: var(--color-main-dark);
+    font-family: 'Press Start 2P';
+}
+
+body img {
+    float: left;
+}
+
+body h2 {
+    margin-left: 20px;
+    font-size: 50px;
 }
 
 section {
