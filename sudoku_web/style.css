@@ -38,9 +38,10 @@ section {
     background-color: var(--color-main);
 }
 
+/*
 .board {
     display: inline-grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33.33% 33.33% 33.33%;
     height: 900px;
     width: 900px;
     border: 1px solid var(--black);
@@ -48,15 +49,36 @@ section {
 
 .bigField {
     display: inline-grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33.33% 33.33% 33.33%;
     border: 1px solid var(--black);
 }
 
 .field {
+    display: flex;
     background-color: var(--color-field);
     color: var(--color-field-dark);
     border: 1px solid var(--black);
-    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+*/
+
+table {
+    height: 900px;
+    width: 900px;
+    border-spacing: 0;
+    border: 1px solid var(--black);
+}
+
+td {
+    height: 30px;
+    width: 30px;
+    border: 1px solid var(--black);
+    background-color: var(--color-field);
+    color: var(--color-field-dark);
+    padding: 0 40px;
+    font-size: 30px;
+    line-height: 10px;
 }
 
 .field:hover {
