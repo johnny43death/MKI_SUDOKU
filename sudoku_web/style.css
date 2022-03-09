@@ -41,6 +41,9 @@ section {
     width: 80%;
     height: 1000px;
     background-color: var(--color-main-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer {
@@ -73,14 +76,14 @@ section {
 }
 */
 
-table {
+table.board {
     height: 900px;
     width: 900px;
     border-spacing: 0;
     border: 1px solid var(--black);
 }
 
-td {
+td.field {
     height: 30px;
     width: 30px;
     border: 1px solid var(--black);
