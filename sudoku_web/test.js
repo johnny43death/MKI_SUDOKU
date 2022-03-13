@@ -1,4 +1,5 @@
 let arrayMain = new Array(9);
+let arrayDisp = new Array(9)
 let num;
 let emptySpace = {"row": "", "column": ""};
 
