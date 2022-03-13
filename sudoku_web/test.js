@@ -9,7 +9,6 @@ for(i = 0; i < 9; i++){
         arrayMain[i][j] = 0;
         console.log(arrayMain[i][j]);
     }
-    
 }
 
 function rowCheck(arrayMain, emptySpace, num){
