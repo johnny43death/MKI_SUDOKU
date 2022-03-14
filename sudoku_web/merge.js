@@ -83,7 +83,7 @@ function fillArray(arrayMain, emptySpace){
         //console.log('all check value: ', allCheck(arrayMain, emptySpace, num))
         if(allCheck(arrayMain, emptySpace, num)){
             
-            arrayMain[emptySpace.row][emptySpace.column] = num;
+            arrayMain[emptySpace.row][emptySpace.column] = 0;
 
             console.log(arrayMain[emptySpace.row][emptySpace.column]);
             if(fillArray(arrayMain, emptySpace)) return arrayMain;
@@ -115,8 +115,13 @@ function createBoard(boardLocation) {
     }
     for(let i = 0; i < 9; i++) {
         for(let j = 0; j < 9; j++) {
-            document.getElementsByClassName("boardRow")[i].innerHTML += '<td class="field" onclick="selectField(' + 
-            (j) + ',' + (8-i) + ')" class="field' + (j) + '">' + arrayMain[i][j] + '</td>'
+            if(arrayMain[i][j] == 0){
+                document.getElementsByClassName("boardRow")[i].innerHTML += '<td class="empty" onclick="selectField(' + 
+                (j) + ',' + (8-i) + ')" class="field' + (j) + '"><input type="text" maxlength="1"></td>'
+            }else{
+                document.getElementsByClassName("boardRow")[i].innerHTML += '<td class="field" onclick="selectField(' + 
+                (j) + ',' + (8-i) + ')" class="field' + (j) + '">' + arrayMain[i][j] + '</td>'
+            }
         }
     }
     console.log("Board Generated.");
