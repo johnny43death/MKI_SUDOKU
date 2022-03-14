@@ -7,7 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/36eb0d9017.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="createBoard('mainBoard');">
+    <script src="scripts.js">
+    </script>
     <section class="header">
         <img src="logo.png" alt="moai" onclick="game()">
         <h2>Susdoku</h2>
@@ -16,36 +18,10 @@
         <p>idk</p>
     </section>
     <section class="panelR">
-        <script>
-
-            function createBoard(boardLocation) {
-                document.getElementById(boardLocation).innerHTML = "";
-                for(let i = 0; i < 9; i++) {
-                    document.getElementById(boardLocation).innerHTML += '<tr class="boardRow" id="boardRow' + (i+1) + '"></tr>';
-                }
-                for(let i = 0; i < 9; i++) {
-                    for(let j = 0; j < 9; j++) {
-                        document.getElementsByClassName("boardRow")[i].innerHTML += '<td class="field" onclick="selectField(' + (j+1) + ',' + (i+1) + ')" class="field' + (j+1) + '"></td>'
-                    }
-                }
-                console.log("Board Generated.");
-            }
-
-            let test;
-
-            function selectField(x, y) {
-              posX = x;
-              posY = y;
-              console.log("posX = ", posX);
-              console.log("posY = ", posY);
-            }
-        </script>
-        </script>
-        <table class="board" onload="createBoard('mainBoard')">
+        <table class="board" onload="createBoard('mainBoard');">
             <tbody id="mainBoard">
             </tbody>
         </table>
-        <button onclick="createBoard('mainBoard')">g</button>
     </section>
     <section class="footer">
         <p>taitokysymys</p>
