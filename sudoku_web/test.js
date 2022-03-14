@@ -1,15 +1,18 @@
 let arrayMain = new Array(9);
-let arrayDisp = new Array(9)
+let arrayDisp = new Array(9);
 let num;
 let emptySpace = {"row": "", "column": ""};
 
 
 for(i = 0; i < 9; i++){
     arrayMain[i] = new Array(9);
+    arrayDisp[i] = new Array(9);
     for(j = 0; j < 9; j++){
+        arrayDisp[i][j] = 0;
         arrayMain[i][j] = 0;
         console.log(arrayMain[i][j]);
     }
+    
 }
 
 function rowCheck(arrayMain, emptySpace, num){
@@ -49,6 +52,8 @@ function nextEmptySpace(emptySpace, arrayMain){
             if(arrayMain[i][j] === 0){
                 emptySpace.row = i;
                 emptySpace.column = j;
+                console.log("row: ", emptySpace.row)
+                console.log("column: ", emptySpace.column)
                 return emptySpace;
             }
         }
@@ -74,31 +79,41 @@ console.log("empty space column after incrementation: ", emptySpace.column)
 */
 function fillArray(arrayMain, emptySpace){
     emptySpace = nextEmptySpace(emptySpace, arrayMain);
-    if(!emptySpace) return;
+    if(!emptySpace) return true;
     arrayRandom = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     for(num of shuffleArray(arrayRandom)){
         //console.log('all check value: ', allCheck(arrayMain, emptySpace, num))
         if(allCheck(arrayMain, emptySpace, num)){
-            for(i = 0; i < 9; i++){
-                for(j = 0; j < 9; j++){
-                    document.getElementById("main").innerHTML += arrayMain[i][j];
-                }
-                document.getElementById("main").innerHTML += "<br>";
-            }
-            document.getElementById("main").innerHTML += "<br>";
+            
             arrayMain[emptySpace.row][emptySpace.column] = num;
+
             console.log(arrayMain[emptySpace.row][emptySpace.column]);
             if(fillArray(arrayMain, emptySpace)) return arrayMain;
             arrayMain[emptySpace.row][emptySpace.column] = 0;
+            emptySpace.column -= 1;
+            if (emptySpace.column < 0) {
+                emptySpace.row -= 1;
+                emptySpace.column = 9;
+            }
         }
+        arrayMain[emptySpace.row][emptySpace.column] = num;
     }
     return false;
 }
 
-fillArray(arrayMain, emptySpace);
+function makeHoles(arrayDisp) {
+    for(i = 0; i < 51; i++){
+        let k = Math.floor(Math.random()*9+1);
+        let l = Math.floor(Math.random()*9+1);
+        arrayDisp[k][l] = 0;
+    }
+}
 
+fillArray(arrayMain, emptySpace);
 for(i = 0; i < 9; i++){
     for(j = 0; j < 9; j++){
+        if(j % 3 === 0) document.getElementById("main").innerHTML += "|";
+        arrayDisp[i][j] = arrayMain[i][j];
         document.getElementById("main").innerHTML += arrayMain[i][j];
     }
     document.getElementById("main").innerHTML += "<br>";
