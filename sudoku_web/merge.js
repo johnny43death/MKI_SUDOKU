@@ -83,7 +83,7 @@ function fillArray(arrayMain, emptySpace){
         //console.log('all check value: ', allCheck(arrayMain, emptySpace, num))
         if(allCheck(arrayMain, emptySpace, num)){
             
-            arrayMain[emptySpace.row][emptySpace.column] = 0;
+            arrayMain[emptySpace.row][emptySpace.column] = 0;         //TUTAJ ZMIENIAJ W RAZIE TESTÓW
 
             console.log(arrayMain[emptySpace.row][emptySpace.column]);
             if(fillArray(arrayMain, emptySpace)) return arrayMain;
@@ -117,7 +117,7 @@ function createBoard(boardLocation) {
         for(let j = 0; j < 9; j++) {
             if(arrayMain[i][j] == 0){
                 document.getElementsByClassName("boardRow")[i].innerHTML += '<td class="empty" onclick="selectField(' + 
-                (j) + ',' + (8-i) + ')" class="field' + (j) + '"><input type="text" maxlength="1"></td>'
+                (j) + ',' + (8-i) + ')" class="field' + (j) + '"><input type="text"></td>'
             }else{
                 document.getElementsByClassName("boardRow")[i].innerHTML += '<td class="field" onclick="selectField(' + 
                 (j) + ',' + (8-i) + ')" class="field' + (j) + '">' + arrayMain[i][j] + '</td>'

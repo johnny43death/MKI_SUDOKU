@@ -6,7 +6,13 @@
     --color-main-dark: #444d46;
     --color-field: #D7D9CE;
     --color-field-dark: #040404;
-  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 body {
     margin: auto;
@@ -70,8 +76,6 @@ td.field {
 }
 
 td.empty {
-    height: 30px;
-    width: 30px;
     border: 1px solid var(--black);
     background-color: var(--color-field);
     color: var(--color-field-dark);
