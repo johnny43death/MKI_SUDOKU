@@ -108,6 +108,15 @@ function test() {
     console.log("test")
 }
 
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 48 && charCode < 58) {
+        return true;
+    }
+    return false;
+}
+
 function createBoard(boardLocation) {
     document.getElementById(boardLocation).innerHTML = "";
     for(let i = 0; i < 9; i++) {
@@ -117,7 +126,7 @@ function createBoard(boardLocation) {
         for(let j = 0; j < 9; j++) {
             if(arrayMain[i][j] == 0){
                 document.getElementsByClassName("boardRow")[i].innerHTML += '<td class="empty" onclick="selectField(' + 
-                (j) + ',' + (8-i) + ')" class="field' + (j) + '"><input type="text"></td>'
+                (j) + ',' + (8-i) + ')" class="field' + (j) + '"><input type="text" maxlength="1", onkeypress=" return isNumber(event)""></td>'
             }else{
                 document.getElementsByClassName("boardRow")[i].innerHTML += '<td class="field" onclick="selectField(' + 
                 (j) + ',' + (8-i) + ')" class="field' + (j) + '">' + arrayMain[i][j] + '</td>'

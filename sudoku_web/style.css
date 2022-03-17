@@ -70,7 +70,7 @@ td.field {
     border: 1px solid var(--black);
     background-color: var(--color-field);
     color: var(--color-field-dark);
-    padding: 0 40px;
+    padding: 0 30px;
     font-size: 30px;
     line-height: 10px;
 }
