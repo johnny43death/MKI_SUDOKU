@@ -58,6 +58,7 @@ section {
 }
 
 table.board {
+    margin: auto;
     height: 900px;
     width: 900px;
     border-spacing: 0;
@@ -95,14 +96,20 @@ td input {
     line-height: 10px;
 }
 
-td input:hover {
+td input:hover, .finish:hover, .field:hover {
     transition-duration: 0.5s;
     background-color: var(--color-field-dark);
     color: var(--color-field);
 }
 
-.field:hover {
-    transition-duration: 0.5s;
-    background-color: var(--color-field-dark);
-    color: var(--color-field);
+.finish {
+    margin: auto;
+    clear: both;
+    font-family: 'Press Start 2P';
+    font-size:15px;
+    width:140px;
+    height:50px;
+    background-color: var(--color-field);
+    color: var(--color-field-dark);
+    border: 2px solid var(--black);
 }

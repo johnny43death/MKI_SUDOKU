@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="utf-8"/>
     <title>Susdoku</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/36eb0d9017.js" crossorigin="anonymous"></script>
 </head>
 <body onload="createBoard('mainBoard');">
@@ -18,10 +20,13 @@
         <p>idk</p>
     </section>
     <section class="panelR">
-        <table class="board" onload="createBoard('mainBoard');">
+        <table class="board">
             <tbody id="mainBoard">
             </tbody>
         </table>
+        <button class="finish" onclick="finish()">
+            Sprawdź
+        </button>
     </section>
     <section class="footer">
         <p>taitokysymys</p>
