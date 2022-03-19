@@ -70,8 +70,8 @@ td.field {
     border: 1px solid var(--black);
     background-color: var(--color-field);
     color: var(--color-field-dark);
-    padding: 0 30px;
-    font-size: 30px;
+    padding: 0 20px;
+    font-size: 60px;
     line-height: 10px;
 }
 
@@ -79,7 +79,6 @@ td.empty {
     border: 1px solid var(--black);
     background-color: var(--color-field);
     color: var(--color-field-dark);
-    font-size: 30px;
     line-height: 10px;
     text-align: center;
 }
@@ -88,10 +87,10 @@ td input {
     text-align: center;
     height: 90px;
     width: 90px;
-    border: 1px solid var(--black);
+    border: 0px solid;
     background-color: var(--color-field);
     color: var(--color-field-dark);
-    font-size: 70px;
+    font-size: 60px;
     font-family: "Press Start 2P";
     line-height: 10px;
 }
