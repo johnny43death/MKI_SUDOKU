@@ -4,14 +4,15 @@
     --color-main: #7b857e;
     --color-main-light: #a2a6a3;
     --color-main-dark: #444d46;
-    --color-field: #D7D9CE;
-    --color-field-dark: #040404;
+    --color-field-main: #D7D9CE;
+    --color-field-alt: #040404;
+    --color-field-alt-user: #59989b;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 body {
@@ -69,8 +70,8 @@ td.field {
     height: 30px;
     width: 30px;
     border: 1px solid var(--black);
-    background-color: var(--color-field);
-    color: var(--color-field-dark);
+    background-color: var(--color-field-main);
+    color: var(--color-field-alt);
     padding: 0 20px;
     font-size: 60px;
     line-height: 10px;
@@ -78,8 +79,8 @@ td.field {
 
 td.empty {
     border: 1px solid var(--black);
-    background-color: var(--color-field);
-    color: var(--color-field-dark);
+    background-color: var(--color-field-main);
+    color: var(--color-field-alt);
     line-height: 10px;
     text-align: center;
 }
@@ -89,8 +90,8 @@ td input {
     height: 90px;
     width: 90px;
     border: 0px solid;
-    background-color: var(--color-field);
-    color: var(--color-field-dark);
+    background-color: var(--color-field-main);
+    color: var(--color-field-alt-user);
     font-size: 60px;
     font-family: "Press Start 2P";
     line-height: 10px;
@@ -98,18 +99,18 @@ td input {
 
 td input:hover, .finish:hover, .field:hover {
     transition-duration: 0.5s;
-    background-color: var(--color-field-dark);
-    color: var(--color-field);
+    background-color: var(--color-field-alt);
+    color: var(--color-field-main);
 }
 
 .finish {
     margin: auto;
     clear: both;
     font-family: 'Press Start 2P';
-    font-size:15px;
-    width:140px;
-    height:50px;
-    background-color: var(--color-field);
-    color: var(--color-field-dark);
+    font-size: 15px;
+    width: 140px;
+    height: 50px;
+    background-color: var(--color-field-main);
+    color: var(--color-field-alt);
     border: 2px solid var(--black);
 }
