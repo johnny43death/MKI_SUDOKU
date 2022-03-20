@@ -241,7 +241,7 @@ function finish() {
             }
         }
         if (sum !== 45) {
-            alert('błąd w wierszu ' + (i+1));
+            alert('błąd w wierszu ' + i);
             return false;
 
         }

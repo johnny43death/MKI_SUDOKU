@@ -16,9 +16,9 @@ input::-webkit-inner-spin-button {
 }
 
 body {
-    margin: auto;
-    background-color: var(--color-main-light);
+    background-color: var(--color-main-dark);
     font-family: 'Press Start 2P';
+    margin: 0px;
 }
 
 body img {
@@ -34,39 +34,45 @@ section {
     float: left;
 }
 
-.header, .footer {
+.header {
     width: 100%;
     background-color: var(--color-main);
 }
 
-.panel {
+.panelR {
     width: 100%;
+    height: 1000px;
     background-color: var(--color-main-light);
-}
-
-.content {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+
 }
 
-.board {
-    margin: 50px;
-    aspect-ratio: 1 / 1;
-    width: 40%;
+.footer {
+    width: 100%;
+    height: 200px;
+    float: left;
+    background-color: var(--color-main);
+}
+
+table.board {
+    height: 900px;
+    width: 900px;
     border-spacing: 0;
     border: 1px solid var(--black);
 }
 
 td.field {
+    height: 90px;
+    width: 90px;
     border: 1px solid var(--black);
     background-color: var(--color-field-main);
     color: var(--color-field-alt);
     padding: 0 20px;
     font-size: 60px;
     line-height: 10px;
-    text-align: center;
 }
 
 td.empty {
@@ -75,14 +81,15 @@ td.empty {
     color: var(--color-field-alt);
     line-height: 10px;
     text-align: center;
+    height: 90px;
+    width: 90px;
 }
 
-td input {
+.empty input {
     text-align: center;
-    aspect-ratio: 1 / 1;
-    width: 90%;
+    height: 95%;
+    width: 95%;
     border: 0px solid;
-    border-radius: 5px;
     background-color: var(--color-field-main);
     color: var(--color-field-alt-user);
     font-size: 60px;
@@ -90,19 +97,14 @@ td input {
     line-height: 10px;
 }
 
-td input:hover, button:hover, .field:hover {
+td input:hover, .finish:hover, .field:hover {
     transition-duration: 0.5s;
     background-color: var(--color-field-alt);
     color: var(--color-field-main);
 }
 
-.footer p, .content button {
-    margin: 20px;
-}
-
 .button {
-    margin: auto;
-    clear: both;
+
     font-family: 'Press Start 2P';
     font-size: 15px;
     width: 140px;
@@ -110,22 +112,45 @@ td input:hover, button:hover, .field:hover {
     background-color: var(--color-field-main);
     color: var(--color-field-alt);
     border: 2px solid var(--black);
+    float: left;
 }
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1400px) {
     td.field {
         font-size: 30px;
+        height: 30px;
+        width: 30px;
     }
-    td input {
+    .empty input {
         font-size: 30px;
+    }
+    td.empty{
+        height: 30px;
+        width: 30px;
+    }
+    .panelL {
+        width: 100px;
+        float: left;
+    }
+    .panelR{
+        width: 850px;
+        float: left;
     }
   }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 1100px) {
     td.field {
-        font-size: 28px;
-        padding: 0 10px;
+        height: 20px;
+        width: 20px;
     }
-    td input {
-        font-size: 28px;
+    td.empty{
+        height: 20px;
+        width: 20px;
+    }
+    .panelL {
+        width: 82px;
+        float: left;
+    }
+    .panelR{
+        width: 700px;
+        float: left;
     }
   }
