@@ -17,7 +17,7 @@ input::-webkit-inner-spin-button {
 
 body {
     margin: auto;
-    background-color: var(--color-main-dark);
+    background-color: var(--color-main-light);
     font-family: 'Press Start 2P';
 }
 
@@ -34,47 +34,39 @@ section {
     float: left;
 }
 
-.header {
+.header, .footer {
     width: 100%;
     background-color: var(--color-main);
 }
 
-.panelL {
-    width: 20%;
-    background-color: var(--color-main-dark);
+.panel {
+    width: 100%;
+    background-color: var(--color-main-light);
 }
 
-.panelR {
-    width: 80%;
-    height: 1000px;
-    background-color: var(--color-main-light);
+.content {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.footer {
-    width: 100%;
-    background-color: var(--color-main);
-}
-
-table.board {
-    margin: auto;
-    height: 900px;
-    width: 900px;
+.board {
+    margin: 50px;
+    aspect-ratio: 1 / 1;
+    width: 40%;
     border-spacing: 0;
     border: 1px solid var(--black);
 }
 
 td.field {
-    height: 30px;
-    width: 30px;
     border: 1px solid var(--black);
     background-color: var(--color-field-main);
     color: var(--color-field-alt);
     padding: 0 20px;
     font-size: 60px;
     line-height: 10px;
+    text-align: center;
 }
 
 td.empty {
@@ -87,9 +79,10 @@ td.empty {
 
 td input {
     text-align: center;
-    height: 90px;
-    width: 90px;
+    aspect-ratio: 1 / 1;
+    width: 90%;
     border: 0px solid;
+    border-radius: 5px;
     background-color: var(--color-field-main);
     color: var(--color-field-alt-user);
     font-size: 60px;
@@ -97,13 +90,17 @@ td input {
     line-height: 10px;
 }
 
-td input:hover, .finish:hover, .field:hover {
+td input:hover, button:hover, .field:hover {
     transition-duration: 0.5s;
     background-color: var(--color-field-alt);
     color: var(--color-field-main);
 }
 
-.finish {
+.footer p, .content button {
+    margin: 20px;
+}
+
+.button {
     margin: auto;
     clear: both;
     font-family: 'Press Start 2P';
@@ -114,3 +111,21 @@ td input:hover, .finish:hover, .field:hover {
     color: var(--color-field-alt);
     border: 2px solid var(--black);
 }
+
+@media only screen and (max-width: 1000px) {
+    td.field {
+        font-size: 30px;
+    }
+    td input {
+        font-size: 30px;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    td.field {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+    td input {
+        font-size: 28px;
+    }
+  }
