@@ -229,6 +229,7 @@ function isNumber(evt) {
 }
 
 function createBoard(boardLocation) {
+    startNewGame(20);
     document.getElementById(boardLocation).innerHTML = '';
     for (let i = 0; i < 9; i++) {
         document.getElementById(boardLocation).innerHTML += '<tr class="boardRow" id="boardRow' + (i) + '"></tr>';
@@ -236,9 +237,9 @@ function createBoard(boardLocation) {
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
             if (arrayPlayable[i][j] == 0) {
-                document.getElementsByClassName('boardRow')[i].innerHTML += '<td class="empty" class="field' + (j) + '"><input type="text" maxlength="1", onkeypress=" return isNumber(event)""></td>'
+                document.getElementsByClassName('boardRow')[i].innerHTML += '<td class="empty"  class="field' + (j) + '"><input type="text" maxlength="1", onkeypress=" return isNumber(event)""></td>'
             } else {
-                document.getElementsByClassName('boardRow')[i].innerHTML += '<td class="field" class="field' + (j) + '">' + arrayMain[i][j] + '</td>'
+                document.getElementsByClassName('boardRow')[i].innerHTML += '<td class="field"  class="field' + (j) + '">' + arrayMain[i][j] + '</td>'
             }
         }
     }
@@ -255,11 +256,13 @@ function finish() {
                 sum += parseInt(document.getElementsByClassName('boardRow')[i].children[j].innerText);
             }
         }
-        if (sum != 45) {
+        if (sum !== 45) {
             alert('błąd w wierszu ' + i);
             return false;
+
         }
     }
+
     for (let i = 0; i < 9; i++) {
         let sum = 0;
         for (let j = 0; j < 9; j++) {
@@ -269,10 +272,35 @@ function finish() {
                 sum += parseInt(document.getElementsByClassName('boardRow')[j].children[i].innerText);
             }
         }
-        if (sum != 45) {
+        if (sum !== 45) {
             alert('błąd w kolumnie ' + i);
             return false;
+
         }
     }
-    alert('powinno być ok (poza komórkami)');
+
+    for (let i = 0; i < 9; i += 3) {
+        for (let ii = 0; ii < 9; ii += 3) {
+            let sum = 0;
+            for (let j = i; j < i + 3; j++) {
+                for (let jj = ii; jj < ii + 3; jj++) {
+                    if (document.getElementsByClassName('boardRow')[j].children[jj].className === 'empty') {
+                        sum += parseInt(document.getElementsByClassName('boardRow')[j].children[jj].firstChild.value);
+                    } else {
+                        sum += parseInt(document.getElementsByClassName('boardRow')[j].children[jj].innerText);
+                    }
+
+                }
+            }
+            console.log('sum x' + ii + ' y' + i + ' = ' + sum)
+            if (sum !== 45) {
+                alert('błąd w komórce: x' + ii + ' y' + i);
+                return false;
+
+            }
+
+        }
+    }
+
+    alert("Wygrałeś!");
 }
